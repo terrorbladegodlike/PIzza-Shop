@@ -377,5 +377,17 @@ const pizzas = [
 ];
 
 export default function Home() {
-  return <section>home</section>;
+  return (
+    <section>
+      <div className="container mx-auto">
+        <div>
+          {pizzas.map((pizza) => {
+            return (
+              <Pizza pizza={pizza} />
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
 }
