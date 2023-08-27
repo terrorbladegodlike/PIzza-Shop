@@ -79,7 +79,7 @@ const PizzaDetails = ({ pizza }) => {
               </div>
             </div>
             {/* Size Sellection */}
-            <SizeSelection />
+            <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             {/* Crust Sellection */}
             <CrustSelection />
             {/* Topping */}
