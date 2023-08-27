@@ -15,7 +15,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             width={60}
             height={60}
             alt='pizza'
-            className={`${size === 'small' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'}`}
+            className={`${size === 'small' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'} mb-1`}
           />
           <input
             type="radio"
@@ -34,7 +34,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             width={70}
             height={70}
             alt='pizza'
-            className={`${size === 'medium' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'}`}
+            className={`${size === 'medium' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'} mb-1`}
           />
           <input
             type="radio"
@@ -53,7 +53,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             width={80}
             height={80}
             alt='pizza'
-            className={`${size === 'large' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'}`}
+            className={`${size === 'large' ? 'border-2 border-orange p-[2px] rounded-full' : 'border-transparent filter saturate-[.1]'} mb-1`}
           />
           <input
             type="radio"

@@ -60,7 +60,7 @@ const PizzaDetails = ({ pizza }) => {
         </div>
       </div>
       {/* Details */}
-      <div className='bg-pink-100 flex flex-1 flex-col'>
+      <div className='flex flex-1 flex-col'>
         <div className='flex-1 p-2 text-center lg:text-left'>
           <div className='flex-1 bg-white overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-white pr-2'>
             {/* Name */}
@@ -69,7 +69,7 @@ const PizzaDetails = ({ pizza }) => {
                 {pizza.name}
               </h2>
               {/* Size & Crust text */}
-              <div className='bg-yellow-200 mb-6 text-lg font-medium'>
+              <div className='mb-6 text-lg font-medium'>
                 <span>
                   {size === 'small' ? '25 cm' : size === 'medium' ? '30 cm' : size === 'large' ? '35 cm' : null}
                 </span>
@@ -81,7 +81,7 @@ const PizzaDetails = ({ pizza }) => {
             {/* Size Sellection */}
             <SizeSelection pizza={pizza} size={size} setSize={setSize} />
             {/* Crust Sellection */}
-            <CrustSelection />
+            <CrustSelection crust={crust} setCrust={setCrust} />
             {/* Topping */}
             <div>
               Choose Topping
