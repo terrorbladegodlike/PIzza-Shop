@@ -29,7 +29,7 @@ const PizzaDetails = ({ pizza }) => {
   useEffect(() => {
     size === 'small' ? setPrice(parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2)) :
       size === 'medium' ? setPrice(parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2)) :
-        size === ' large' ? setPrice(parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2)) : null
+        size === 'large' ? setPrice(parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2)) : null
   })
 
   // Set Additional Topping Price
@@ -83,13 +83,13 @@ const PizzaDetails = ({ pizza }) => {
             {/* Crust Sellection */}
             <CrustSelection crust={crust} setCrust={setCrust} />
             {/* Topping */}
-            <div>
+            <div className='mb-4 text-xl font-semibold'>
               Choose Topping
             </div>
             {/* Topping List */}
-            <div>
+            <div className='flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start'>
               {pizza.toppings?.map((topping, index) => {
-                return <Topping key={index} />
+                return <Topping topping={topping} additionalTopping={additionalTopping} setAdditionalTopping={setAdditionalTopping} key={index} />
               })}
             </div>
           </div>

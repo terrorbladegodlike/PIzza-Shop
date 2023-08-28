@@ -63,7 +63,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             onChange={(e) => setSize(e.target.value)}
             className='appearance-none'
           />
-          Small
+          Large
         </label>
       </div>
     </div>
