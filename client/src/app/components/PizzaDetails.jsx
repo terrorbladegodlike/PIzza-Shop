@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 // Next Image
 import Image from 'next/image'
@@ -7,6 +7,9 @@ import Image from 'next/image'
 import SizeSelection from './SizeSelection'
 import CrustSelection from './CrustSelection'
 import Topping from './Topping'
+
+// Import Context
+import { CartContext } from '../context/CartContext'
 
 const PizzaDetails = ({ pizza }) => {
 
@@ -24,6 +27,9 @@ const PizzaDetails = ({ pizza }) => {
 
   // Price State
   const [price, setPrice] = useState(0)
+
+  // Add To Cart
+  const { addToCart } = useContext(CartContext)
 
   // Set The Price Based On The Pizza Size
   useEffect(() => {
@@ -96,7 +102,7 @@ const PizzaDetails = ({ pizza }) => {
         </div>
         {/* Add To Card Btn */}
         <div className='h-full flex items-center px-2 lg:items-end'>
-          <button className='btn btn-lg gradient w-full flex justify-center gap-x-2'>
+          <button onClick={() => addToCart(pizza.id, pizza.image, pizza.name, price, additionalTopping, size, crust)} className='btn btn-lg gradient w-full flex justify-center gap-x-2'>
             <div>
               Add to card for
             </div>

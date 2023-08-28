@@ -5,6 +5,7 @@ import './globals.css';
 import Nav from './components/Nav';
 import CartProvider from './context/CartContext';
 import CartMobileIcon from './components/CartMobileIcon';
+import CartMobile from './components/CartMobile';
 
 // Import next fonts
 import { Bangers, Quicksand, Roboto_Condensed } from 'next/font/google'
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <body className={`${quickdsand.variable} ${bangers.variable} ${robotoCondensed.variable} font-quicksand`}>
           <Nav />
           <CartMobileIcon />
+          <CartMobile />
           {children}
         </body>
       </html>
