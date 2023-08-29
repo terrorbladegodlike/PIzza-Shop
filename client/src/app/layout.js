@@ -7,6 +7,7 @@ import CartProvider from './context/CartContext';
 import CartMobileIcon from './components/CartMobileIcon';
 import CartMobile from './components/CartMobile';
 import CartDesktop from './components/CartDesktop';
+import Footer from './components/Footer';
 
 // Import next fonts
 import { Bangers, Quicksand, Roboto_Condensed } from 'next/font/google'
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           <CartMobile />
           {children}
           <CartDesktop />
+          <Footer />
         </body>
       </html>
     </CartProvider>
