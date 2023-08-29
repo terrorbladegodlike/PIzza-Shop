@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // Next Image
 import Image from 'next/image'
@@ -7,8 +7,14 @@ import Image from 'next/image'
 import { BiPlus, BiMinus } from 'react-icons/bi'
 import { IoCloseOutline } from 'react-icons/io5'
 
+// Context
+import { CartContext } from '../context/CartContext'
+
 
 const CartItem = ({ pizza }) => {
+
+  const { removeItem, increaseAmount, decreaseAmount } = useContext(CartContext)
+
   return (
     <div className='select none'>
       <div className='flex gap-x-4 mb-2'>
@@ -34,15 +40,15 @@ const CartItem = ({ pizza }) => {
             {/* Quantity controls */}
             <div className='flex items-center gap-x-1'>
               {/* Decrease Quantity */}
-              <div className='w-[18px] h-[18px flex justify-center items-center cursor-pointer] text-white gradient rounded-full'>
+              <div onClick={() => decreaseAmount(pizza.id, pizza.price)} className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full'>
                 <BiMinus />
               </div>
               {/* Pizza Amount */}
               <div className='font-semibold flex flex-1 max-w-[30px] justify-center items-center text-sm'>
-                3
+                {pizza.amount}
               </div>
               {/* Increase Quantity */}
-              <div className='w-[18px] h-[18px flex justify-center items-center cursor-pointer] text-white gradient rounded-full'>
+              <div onClick={() => increaseAmount(pizza.id, pizza.price)} className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white gradient rounded-full'>
                 <BiPlus />
               </div>
             </div>
@@ -50,7 +56,7 @@ const CartItem = ({ pizza }) => {
         </div>
         <div className='flex flex-col justify-between'>
           {/* Remove Item */}
-          <div className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all text-orange'>
+          <div onClick={() => removeItem(pizza.id, pizza.price, pizza.crust)} className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all text-orange'>
             <IoCloseOutline />
           </div>
           {/* Price */}

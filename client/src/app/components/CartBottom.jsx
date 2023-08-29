@@ -24,7 +24,7 @@ Modal.setAppElement('body')
 
 const CartBottom = () => {
 
-  const { setIsOpen, cart } = useContext(CartContext)
+  const { setIsOpen, cart, cartTotal } = useContext(CartContext)
 
   // Modal State
   const [modal, setModal] = useState(false)
@@ -46,7 +46,7 @@ const CartBottom = () => {
           {/* Total Price */}
           <div className='flex items-center justify-between mb-6'>
             <div>Total: </div>
-            <div>$320</div>
+            <div >${parseFloat(cartTotal).toFixed(2)}</div>
           </div>
           {/* BTN */}
           <div className='flex flex-col gap-y-3'>

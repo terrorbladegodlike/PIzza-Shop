@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import CartProvider from './context/CartContext';
 import CartMobileIcon from './components/CartMobileIcon';
 import CartMobile from './components/CartMobile';
+import CartDesktop from './components/CartDesktop';
 
 // Import next fonts
 import { Bangers, Quicksand, Roboto_Condensed } from 'next/font/google'
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <CartMobileIcon />
           <CartMobile />
           {children}
+          <CartDesktop />
         </body>
       </html>
     </CartProvider>
